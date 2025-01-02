@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Hanoi - Home</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 48px;
+        color: #333;
+      }
+      .difficulty-btn {
+        margin: 10px;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+      }
+      .difficulty-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Tower of Hanoi</h1>
+    <button class="difficulty-btn" onclick="selectDifficulty('easy')">
+      Easy
+    </button>
+    <button class="difficulty-btn" onclick="selectDifficulty('hard')">
+      Hard
+    </button>
+
+    <script>
+      function selectDifficulty(difficulty) {
+        // Redirect to the game page with the chosen difficulty as a query parameter
+        window.location.href = `game.html?difficulty=${difficulty}`;
+      }
+    </script>
+  </body>
+</html>

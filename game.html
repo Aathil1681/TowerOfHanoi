@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Tower of Hanoi</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Tower of Hanoi Game</h1>
+    <div id="tower-container" class="tower-container">
+      <div id="tower-1" class="tower"></div>
+      <div id="tower-2" class="tower"></div>
+      <div id="tower-3" class="tower"></div>
+    </div>
+
+    <div class="controls">
+      <button id="restart">Restart</button>
+      <button id="redo">Redo</button>
+    </div>
+
+    <p id="message"></p>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get the difficulty from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const difficulty = urlParams.get("difficulty") || "hard"; // Default to 'hard'
+
+        // Start the game based on the selected difficulty
+        setupGame(difficulty);
+
+        // Add event listener for the restart button
+        document.getElementById("restart").addEventListener("click", () => {
+          console.log("restart");
+          restartGame(); // Ensure that this function is defined in script.js
+        });
+      });
+    </script>
+  </body>
+</html>
